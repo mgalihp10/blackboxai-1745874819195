@@ -5,9 +5,11 @@ const { Pool } = require('pg');
 const axios = require('axios');
 const http = require('http');
 const WebSocket = require('ws');
+const cors = require('cors');
 
 const app = express();
 app.use(bodyParser.json());
+app.use(cors()); // Enable CORS for all routes
 
 const pool = new Pool({
   user: 'postgres',
